@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axe from "axe-core";
-import { InfinitySpin } from "react-loader-spinner";
 
 const AccessibilityChecker: React.FC = () => {
   const [results, setResults] = useState<string[]>([]);
@@ -61,8 +60,8 @@ const AccessibilityChecker: React.FC = () => {
           placeholder="Enter URL"
           className=""
         />
-        <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
-          {loading ? <InfinitySpin width="120" color="#ffffff" /> : "Analyze Website"}
+        <button disabled={loading} type="submit" className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+          {loading ? "Please wait..." : "Analyze Website"}
         </button>
       </form>
 
